@@ -43,4 +43,14 @@ class QuotePicker {
         } while (!$quote);
         return $quote;
     }
+
+    /**
+     * Insert quotes.
+     * Insert a batch of new quotes.
+     * @param array $quotes A list of quotes.
+     * @return void
+     */
+    public function insert_quotes($quotes) {
+        $this->client->quotes->dijkstra->insertMany($quotes);
+    }
 }
