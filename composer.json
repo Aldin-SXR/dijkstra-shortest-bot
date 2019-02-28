@@ -1,4 +1,14 @@
 {
+    "name": "aldin-sxr/dijkstra-bot",
+    "description": "A telegram bot dedicated to Dijkstra and his work.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Aldin Kovačević",
+            "email": "aldin.kovacevic.97@gmail.com"
+        }
+    ],
     "require": {
         "telegram-bot/api": "^2.3",
         "mongodb/mongodb": "^1.4"
