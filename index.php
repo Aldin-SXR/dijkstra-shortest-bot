@@ -15,19 +15,19 @@ if (DEBUG) {
 $bot = new \TelegramBot\Api\Client(BOT_API_KEY);
 
 /* TODO: Keyboard suggestions */
-$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([ [ "/start", "/quote" ] ], true);
+// $keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([ [ "/start", "/quote" ] ], true);
 
 /* A sample start command */
 $bot->command("start", function($message) use ($bot) {
-    $answer = "Welcome to Dijkstra's Shortest Quote. \nI hope that I will soon find the shortest path to your heart. \xF0\x9F\x92\x96";
-    $bot->sendMessage($message->getChat()->getId(), $answer, NULL, false, NULL, $keyboard);
+    $answer = "Welcome to Dijkstra's Shortest Quote. \nI hope that I will soon find the shortest path to your heart. \xF0\x9F\x92\x96 \n\n Type in /quote to see a random quote.";
+    $bot->sendMessage($message->getChat()->getId(), $answer);
 });
 
 /* Command to fetch the quote */
 $bot->command("quote", function($message) use ($bot) {
     $qp = new QuotePicker();
     $answer = $qp->get_quote();
-    $bot->sendMessage($message->getChat()->getId(), $answer, NULL, false, NULL, $keyboard);
+    $bot->sendMessage($message->getChat()->getId(), $answer);
 });
 
 /* Run the bot */
