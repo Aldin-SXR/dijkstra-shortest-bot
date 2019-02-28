@@ -15,7 +15,7 @@ if (DEBUG) {
 $bot = new \TelegramBot\Api\Client(BOT_API_KEY);
 
 /* TODO: Keyboard suggestions */
-$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([ [ "/quote" ] ], true);
+$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([ [ "/start", "/quote" ] ], true);
 
 /* A sample start command */
 $bot->command("start", function($message) use ($bot) {
