@@ -1,4 +1,11 @@
 <?php
+/**
+ * QuoteCrawler file.
+ * The file which is used to import a list of Dijkstra's quotes.
+ */
+require_once __DIR__."/../vendor/autoload.php";
+require_once __DIR__."/../config/Config.php";
+require_once __DIR__."/QuotePicker.php";
 
 $dom = new DOMDocument();
 
@@ -33,4 +40,4 @@ foreach ($quotes as $i => $quote) {
     }
 }
 
-file_put_contents(__DIR__."/dijkstra.json", json_encode($quote_list));
+(new QuotePicker())->insert_quotes($quote_list);
