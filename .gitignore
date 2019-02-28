@@ -2,4 +2,5 @@
 .idea/
 vendor/
 composer.lock
-Config.php
+config/Config.php
+src/dijkstra.json
