@@ -1,7 +1,8 @@
 <?php
 
 require_once __DIR__."/vendor/autoload.php";
-require_once __DIR__."/Config.php";
+require_once __DIR__."/config/Config.php";
+require_once __DIR__."/src/QuotePicker.php";
 
 /* Turn on error reporting while debugging */
 if (DEBUG) {
@@ -13,11 +14,20 @@ if (DEBUG) {
 /* Create a new Telegram bot */
 $bot = new \TelegramBot\Api\Client(BOT_API_KEY);
 
-/* A sample command */
+/* A sample start command */
 $bot->command("start", function($message) use ($bot) {
-    $answer = "You found the shortest path to my heart. \xF0\x9F\x92\x96";
+    $answer = "Welcome to Dijkstra's Shortest Quote. \nI hope that I will soon find the shortest path to your heart. \xF0\x9F\x92\x96";
     $bot->sendMessage($message->getChat()->getId(), $answer);
 });
+
+/* Command to fetch the quote */
+$bot->command("quote", function($message) use ($bot) {
+    $qp = new QuotePicker();
+    $answer = $qp->get_quote();
+    $bot->sendMessage($message->getChat()->getId(), $answer);
+});
+
+/* TODO: Keyboard suggestions */
 
 /* Run the bot */
 $bot->run();
