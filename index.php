@@ -27,7 +27,7 @@ $bot->command("start", function($message) use ($bot) {
 $bot->command("quote", function($message) use ($bot) {
     $qp = new QuotePicker();
     $answer = $qp->get_quote();
-    $bot->sendMessage($message->getChat()->getId(), $answer);
+    $bot->sendMessage($message->getChat()->getId(), $answer, NULL, false, NULL, $keyboard);
 });
 
 /* Run the bot */
