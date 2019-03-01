@@ -9,6 +9,7 @@ Start absorbing Dijkstra's wisdom by [clicking on this link.](https://t.me/dijks
 ## Commands
 
 `/start` - Begin interacting with the bot.
+
 `/quote` - Fetch and display a random quote.
 
 I may add some other commands and features later.
