@@ -13,6 +13,6 @@ Start absorbing Dijkstra's wisdom by [clicking on this link.](https://t.me/dijks
 `/quote` - Fetch and display a random quote.
 
 I may add some other commands and features later.
- 
+   
 ---
 _Work in progress_
